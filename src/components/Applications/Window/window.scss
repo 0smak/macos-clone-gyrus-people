@@ -1,0 +1,40 @@
+.application-window {
+	animation: window-appear 0.25s ease-in-out;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	transform: width 0.25s ease-in-out, height 0.25s ease-in-out;
+	&__actions {
+		padding: 7.5px 5px;
+		top: 0;
+		left: 0;
+		position: absolute;
+		z-index: 1;
+	}
+	&--minimized {
+		background-color: red;
+		animation: window-disappear 0.25s ease-in-out forwards;
+	}
+}
+
+@keyframes window-appear {
+	from {
+		opacity: 0.25;
+		transform: scale(0, 0.75) translate(0, 40vh);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1, 1) translate(0, 0);
+	}
+}
+
+@keyframes window-disappear {
+	from {
+		opacity: 1;
+		transform: scale(1, 1) translate(0, 0);
+	}
+	to {
+		opacity: 0.25;
+		transform: scale(0, 0.75) translate(0, 40vh);
+	}
+}

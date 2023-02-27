@@ -1,0 +1,44 @@
+.window-action-buttons {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 5px;
+	align-items: center;
+	&__button {
+		--background: unset;
+		--hover-bg: unset;
+		--size: 12px;
+		border: 0;
+		padding: 0;
+		width: var(--size);
+		height: var(--size);
+		border-radius: 50%;
+		position: relative;
+		background-color: var(--background);
+		&:nth-child(1) {
+			--background: var(--close-color);
+			--hover-bg: var(--close-hover-color);
+		}
+		&:nth-child(2) {
+			--background: var(--minimize-color);
+			--hover-bg: var(--minimize-hover-color);
+		}
+		&:nth-child(3) {
+			--background: var(--maximize-color);
+			--hover-bg: var(--maximize-hover-color);
+		}
+		cursor: pointer;
+		&:hover {
+			&::after {
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 35%;
+				height: 35%;
+				border-radius: 50%;
+				background-color: var(--hover-bg);
+				transform: translate(-50%, -50%);
+			}
+		}
+	}
+}

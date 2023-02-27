@@ -1,0 +1,60 @@
+@use "/src/assets/scss/mixin/backdrop-blur" as m;
+
+@mixin white-hover {
+	cursor: pointer;
+	background-color: transparent;
+	transition: background-color 0.2s ease-in-out;
+	height: 100%;
+	padding: 0 5px;
+	display: flex;
+	align-items: center;
+	&:hover {
+		background-color: rgba(255, 255, 255, 0.15);
+	}
+}
+
+.menu-bar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 15px 0 20px;
+	@include m.backdrop-blur(24px);
+	background-color: rgba(0, 0, 0, 0.15);
+	z-index: 100;
+	&__content,
+	&__menu {
+		display: flex;
+		align-items: center;
+		font-size: 0.8125rem;
+		color: white;
+		height: 100%;
+	}
+	&__content {
+		gap: 10px;
+		&:last-child {
+			flex-direction: row-reverse;
+			gap: 0;
+		}
+	}
+	&__menu {
+		margin-left: 10px;
+		gap: 7.5px;
+	}
+	&__item {
+		@include white-hover;
+		&:first-child {
+			font-weight: bolder;
+		}
+	}
+	&__time {
+		@include white-hover;
+	}
+	&__buttons {
+		display: flex;
+		flex-direction: row-reverse;
+	}
+	&__icon {
+		border: 0;
+		@include white-hover;
+	}
+}
