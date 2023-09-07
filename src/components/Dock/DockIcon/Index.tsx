@@ -13,5 +13,6 @@ export const DockIcon = (props: Partial<IApplication | any>) => {
 		</button>
 	);
 	const separator = <div className="separator"></div>;
-	return type === "app" ? app : separator;
+
+	return type === "app" || type === "url" ? app : separator;
 };

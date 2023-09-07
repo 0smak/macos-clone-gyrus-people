@@ -9,7 +9,8 @@
 	color: var(--fg-color-alt);
 	height: 100%;
 	width: 100%;
-
+	display: flex;
+	flex-direction: column;
 	&__header {
 		display: flex;
 		align-items: center;
@@ -24,13 +25,39 @@
 		text-align: center;
 	}
 	&__body {
-		display: block;
-		height: 100%;
+		display: flex;
+		flex-direction: column;
+		height: 0;
 		width: 100%;
 		padding: 10px;
 		font-family: monospace;
+		flex: 1;
 	}
 	&__alias {
 		color: var(--primary-color-light);
+	}
+	&__output {
+		overflow-y: auto;
+		margin-top: 5px;
+		line-height: 1.5;
+		scrollbar-width: none;
+		height: max-content;
+		height: 0;
+		flex: 1;
+		color: rgb(247, 205, 255);
+		padding-right: 20px;
+		&::-webkit-scrollbar {
+			width: 4px;
+		}
+
+		&::-webkit-scrollbar-track {
+			box-shadow: inset 0 0 6px rgba(138, 138, 180, 0);
+		}
+
+		&::-webkit-scrollbar-thumb {
+			border-radius: 15px;
+			background-color: rgb(72, 72, 104);
+			outline: 1px solid transparent;
+		}
 	}
 }

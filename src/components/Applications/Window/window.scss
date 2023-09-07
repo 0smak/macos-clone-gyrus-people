@@ -9,11 +9,18 @@
 		top: 0;
 		left: 0;
 		position: absolute;
-		z-index: 1;
+		z-index: 10;
 	}
 	&--minimized {
-		background-color: red;
 		animation: window-disappear 0.25s ease-in-out forwards;
+	}
+}
+
+.draggable {
+	position: fixed !important;
+	z-index: 1;
+	&--frontmost {
+		z-index: 10;
 	}
 }
 

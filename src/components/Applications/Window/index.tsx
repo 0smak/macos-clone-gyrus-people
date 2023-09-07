@@ -1,5 +1,4 @@
 import { Resizable } from "re-resizable";
-import { useRef } from "react";
 import Draggable from "react-draggable";
 import { APPLICATION_STATUS } from "../../../enums/applicationStatus";
 import { useDrag } from "../../../hooks/useDrag";
@@ -10,8 +9,9 @@ import "./window.scss";
 import { WindowActionButtons } from "./WindowActionButtons";
 
 export const Window = (props: any) => {
-	const nodeRef = useRef(null);
-	const { width, setWidth, height, setHeight } = useResizable(500, 400);
+	const { width, setWidth, height, setHeight } = useResizable(
+		...(props.defaultSize as [number, number])
+	);
 	const getRandomPosition = () => {
 		const appsArea = document.querySelector("#apps-area") as HTMLElement;
 		if (!appsArea) return { x: 0, y: 0 };
@@ -39,7 +39,12 @@ export const Window = (props: any) => {
 	const handleMaximize = () => {
 		const { clientWidth, clientHeight } =
 			(document.querySelector("#apps-area") as HTMLElement) ?? {};
-		if (windowState === APPLICATION_STATUS.MAXIMIZED) {
+		if (
+			windowState === APPLICATION_STATUS.MAXIMIZED ||
+			(clientWidth <= width &&
+				clientHeight <= height &&
+				windowState === APPLICATION_STATUS.OPEN)
+		) {
 			setPosition(randomPosition);
 			setWidth(500);
 			setHeight(400);
@@ -62,12 +67,20 @@ export const Window = (props: any) => {
 		props.onStatusChanged(props.id, status);
 	};
 
+	const handleMouseDown = () => {
+		props.setFrontMost(props.id);
+	};
+
 	return (
 		<Draggable
 			defaultPosition={randomPosition}
 			position={position}
 			onDrag={handleDrag}
 			handle=".draggable-handler"
+			defaultClassName={`draggable ${
+				props?.isFrontMost ? "draggable--frontmost" : ""
+			}`}
+			onMouseDown={handleMouseDown}
 		>
 			<Resizable
 				size={{ width, height }}
@@ -77,6 +90,8 @@ export const Window = (props: any) => {
 					await delay(0);
 					setPosition({ ...position });
 				}}
+				minHeight={props?.minHeight ?? 400}
+				minWidth={props?.minWidth ?? 400}
 			>
 				<div className={`application-window ${windowStateClass()}`}>
 					<div className="application-window__actions">
