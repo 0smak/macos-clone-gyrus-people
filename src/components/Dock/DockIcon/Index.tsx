@@ -9,7 +9,14 @@ export const DockIcon = (props: Partial<IApplication | any>) => {
 			className="dock-icon-container"
 			onClick={(_) => props.onOpenApp(id, APPLICATION_STATUS.OPEN)}
 		>
-			<img className="dock-icon" src={location.pathname + icon} alt={name} />
+			<img
+				className="dock-icon"
+				srcSet={`${location.pathname + icon}.webp, ${
+					location.pathname + icon
+				}.png`}
+				src={location.pathname + icon + ".png"}
+				alt={name}
+			/>
 		</button>
 	);
 	const separator = <div className="separator"></div>;

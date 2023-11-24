@@ -13,7 +13,10 @@ export const FileIcon = ({ icon, name, onOpenApp, id }: IFileIcon) => {
 			>
 				<div className="file-icon__img-container">
 					<img
-						src={location.pathname + icon}
+						srcSet={`${location.pathname + icon}.webp, ${
+							location.pathname + icon
+						}.png`}
+						src={`${location.pathname + icon}.png`}
 						alt={name}
 						className="file-icon__img"
 					/>

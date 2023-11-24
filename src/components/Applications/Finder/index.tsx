@@ -6,28 +6,28 @@ export const FinderWindow = (props: any) => {
 
 	const photos = [
 		{
-			src: "images/apps/finder/photos/me.jpg",
-			name: "me.jpg",
+			src: "images/apps/finder/photos/me",
+			name: "me",
 		},
 		{
-			src: "images/apps/finder/photos/me2.jpeg",
-			name: "me2.jpg",
+			src: "images/apps/finder/photos/me2",
+			name: "me2",
 		},
 		{
-			src: "images/apps/finder/photos/stop-doing-regex.png",
-			name: "regex.jpg",
+			src: "images/apps/finder/photos/stop-doing-regex",
+			name: "regex",
 		},
 		{
-			src: "images/apps/finder/photos/lambdas.jpeg",
-			name: "lambdas.jpeg",
+			src: "images/apps/finder/photos/lambdas",
+			name: "lambdas",
 		},
 		{
-			src: "images/apps/finder/photos/api-vs-regex.jpeg",
-			name: "api-vs-regex.jpeg",
+			src: "images/apps/finder/photos/api-vs-regex",
+			name: "api-vs-regex",
 		},
 		{
-			src: "images/apps/finder/photos/aws-experience.jpg",
-			name: "aws-experience.jpg",
+			src: "images/apps/finder/photos/aws-experience",
+			name: "aws-experience",
 		},
 	];
 
@@ -119,7 +119,10 @@ export const FinderWindow = (props: any) => {
 					<div className="finder-content">
 						<div className="image-display">
 							<img
-								src={location.pathname + photos[selectedPhoto]?.src}
+								srcSet={`${
+									location.pathname + photos[selectedPhoto]?.src
+								}.webp, ${location.pathname + photos[selectedPhoto]?.src}.jpg`}
+								src={location.pathname + photos[selectedPhoto]?.src + ".jpg"}
 								alt={photos[selectedPhoto]?.name}
 							/>
 						</div>
@@ -135,7 +138,10 @@ export const FinderWindow = (props: any) => {
 									onClick={() => setSelectedPhoto(index)}
 								>
 									<img
-										src={location.pathname + photo.src}
+										srcSet={`${location.pathname + photo.src}.webp, ${
+											location.pathname + photo.src
+										}.jpg`}
+										src={location.pathname + photo.src + ".jpg"}
 										alt={photo.name}
 										className="image-carousel__item-img"
 									/>

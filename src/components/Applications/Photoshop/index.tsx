@@ -104,6 +104,14 @@ export const PhotoshopWindow = (props: any) => {
 				<section className="photoshop__content">
 					<img
 						className="photoshop__content-image"
+						srcSet={`${
+							location.pathname +
+							"images/apps/photoshop/graphic-design-meme.webp"
+						}, ${
+							location.pathname +
+							"images/apps/photoshop/graphic-design-meme.jpg"
+						}
+					`}
 						src={
 							location.pathname +
 							"images/apps/photoshop/graphic-design-meme.jpg"
