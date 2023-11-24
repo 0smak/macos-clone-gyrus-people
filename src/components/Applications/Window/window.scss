@@ -13,6 +13,10 @@
 	}
 	&--minimized {
 		animation: window-disappear 0.25s ease-in-out forwards;
+		&,
+		& * {
+			pointer-events: none;
+		}
 	}
 }
 

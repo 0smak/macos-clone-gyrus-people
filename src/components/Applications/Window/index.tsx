@@ -68,7 +68,8 @@ export const Window = (props: any) => {
 	};
 
 	const handleMouseDown = () => {
-		props.setFrontMost(props.id);
+		if (windowState !== APPLICATION_STATUS.MINIMIZED)
+			props.setFrontMost(props.id);
 	};
 
 	return (

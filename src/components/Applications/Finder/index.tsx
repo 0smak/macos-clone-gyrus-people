@@ -10,8 +10,12 @@ export const FinderWindow = (props: any) => {
 			name: "me.jpg",
 		},
 		{
+			src: "/images/apps/finder/photos/me2.jpeg",
+			name: "me2.jpg",
+		},
+		{
 			src: "/images/apps/finder/photos/stop-doing-regex.png",
-			name: "me.jpg",
+			name: "regex.jpg",
 		},
 		{
 			src: "/images/apps/finder/photos/lambdas.jpeg",
