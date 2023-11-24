@@ -40,7 +40,7 @@ jobs:
       - name: Build
         run: npm run build
       - name: After build
-        run: mv dist/images dist/gyrus-people-macos-clone/images
+        run: ls -la && cd dist && mkdir gyrus-people-macos-clone && mv ./images gyrus-people-macos-clone && cd ..
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
