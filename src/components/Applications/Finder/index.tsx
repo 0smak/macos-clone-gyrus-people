@@ -6,27 +6,27 @@ export const FinderWindow = (props: any) => {
 
 	const photos = [
 		{
-			src: "/images/apps/finder/photos/me.jpg",
+			src: "images/apps/finder/photos/me.jpg",
 			name: "me.jpg",
 		},
 		{
-			src: "/images/apps/finder/photos/me2.jpeg",
+			src: "images/apps/finder/photos/me2.jpeg",
 			name: "me2.jpg",
 		},
 		{
-			src: "/images/apps/finder/photos/stop-doing-regex.png",
+			src: "images/apps/finder/photos/stop-doing-regex.png",
 			name: "regex.jpg",
 		},
 		{
-			src: "/images/apps/finder/photos/lambdas.jpeg",
+			src: "images/apps/finder/photos/lambdas.jpeg",
 			name: "lambdas.jpeg",
 		},
 		{
-			src: "/images/apps/finder/photos/api-vs-regex.jpeg",
+			src: "images/apps/finder/photos/api-vs-regex.jpeg",
 			name: "api-vs-regex.jpeg",
 		},
 		{
-			src: "/images/apps/finder/photos/aws-experience.jpg",
+			src: "images/apps/finder/photos/aws-experience.jpg",
 			name: "aws-experience.jpg",
 		},
 	];
@@ -45,7 +45,7 @@ export const FinderWindow = (props: any) => {
 							<button className="aside-group__btn">
 								<span className="aside-group__icon">
 									<img
-										src="/images/apps/finder/icons/applications.svg"
+										src="images/apps/finder/icons/applications.svg"
 										alt="Applications"
 										className="aside-group__icon-img"
 									/>
@@ -55,7 +55,7 @@ export const FinderWindow = (props: any) => {
 							<button className="aside-group__btn">
 								<span className="aside-group__icon">
 									<img
-										src="/images/apps/finder/icons/recents.svg"
+										src="images/apps/finder/icons/recents.svg"
 										alt="Recents"
 										className="aside-group__icon-img"
 									/>
@@ -65,7 +65,7 @@ export const FinderWindow = (props: any) => {
 							<button className="aside-group__btn">
 								<span className="aside-group__icon">
 									<img
-										src="/images/apps/finder/icons/airdrop.svg"
+										src="images/apps/finder/icons/airdrop.svg"
 										alt="AirDrop"
 										className="aside-group__icon-img"
 									/>
@@ -75,7 +75,7 @@ export const FinderWindow = (props: any) => {
 							<button className="aside-group__btn aside-group__btn--selected">
 								<span className="aside-group__icon">
 									<img
-										src="/images/apps/finder/icons/photos.svg"
+										src="images/apps/finder/icons/photos.svg"
 										alt="Photos"
 										className="aside-group__icon-img"
 									/>
@@ -85,7 +85,7 @@ export const FinderWindow = (props: any) => {
 							<button className="aside-group__btn">
 								<span className="aside-group__icon">
 									<img
-										src="/images/apps/finder/icons/desktop.svg"
+										src="images/apps/finder/icons/desktop.svg"
 										alt="Desktop"
 										className="aside-group__icon-img"
 									/>
@@ -95,7 +95,7 @@ export const FinderWindow = (props: any) => {
 							<button className="aside-group__btn">
 								<span className="aside-group__icon">
 									<img
-										src="/images/apps/finder/icons/documents.svg"
+										src="images/apps/finder/icons/documents.svg"
 										alt="Documents"
 										className="aside-group__icon-img"
 									/>
@@ -105,7 +105,7 @@ export const FinderWindow = (props: any) => {
 							<button className="aside-group__btn">
 								<span className="aside-group__icon">
 									<img
-										src="/images/apps/finder/icons/downloads.svg"
+										src="images/apps/finder/icons/downloads.svg"
 										alt="Downloads"
 										className="aside-group__icon-img"
 									/>
@@ -119,7 +119,7 @@ export const FinderWindow = (props: any) => {
 					<div className="finder-content">
 						<div className="image-display">
 							<img
-								src={photos[selectedPhoto]?.src}
+								src={location.pathname + photos[selectedPhoto]?.src}
 								alt={photos[selectedPhoto]?.name}
 							/>
 						</div>
@@ -135,7 +135,7 @@ export const FinderWindow = (props: any) => {
 									onClick={() => setSelectedPhoto(index)}
 								>
 									<img
-										src={photo.src}
+										src={location.pathname + photo.src}
 										alt={photo.name}
 										className="image-carousel__item-img"
 									/>

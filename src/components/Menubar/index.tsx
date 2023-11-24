@@ -22,13 +22,22 @@ export const Menubar = () => (
 			<div className="menu-bar__time">{useClock()}</div>
 			<div className="menu-bar__buttons">
 				<button className="menu-bar__icon">
-					<img src="/images/icons/controlcenter.svg" alt="Centro de Control" />
+					<img
+						src={location.pathname + "images/icons/controlcenter.svg"}
+						alt="Centro de Control"
+					/>
 				</button>
 				<button className="menu-bar__icon">
-					<img src="/images/icons/battery.svg" alt="Batería" />
+					<img
+						src={location.pathname + "images/icons/battery.svg"}
+						alt="Batería"
+					/>
 				</button>
 				<button className="menu-bar__icon">
-					<img src="/images/icons/user.svg" alt="Usuario" />
+					<img
+						src={location.pathname + "images/icons/user.svg"}
+						alt="Usuario"
+					/>
 				</button>
 			</div>
 		</div>

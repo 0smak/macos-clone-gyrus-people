@@ -12,7 +12,11 @@ export const FileIcon = ({ icon, name, onOpenApp, id }: IFileIcon) => {
 				className="file-icon"
 			>
 				<div className="file-icon__img-container">
-					<img src={icon} alt={name} className="file-icon__img" />
+					<img
+						src={location.pathname + icon}
+						alt={name}
+						className="file-icon__img"
+					/>
 				</div>
 				<p className="file-icon__name">{name}</p>
 			</button>
